@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --nav-size: 1.4rem; --big-head : 4rem; --h2-size: 3rem; --h3-size: 1.6rem
+}
+
+body{
+    font-family: 'Public Sans', sans-serif;
+}
+html{
+    font-size: 62.8%;
+}
+section,nav,footer{
+    padding: 2em 10em;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: hsl(0, 0%, 100%);
+}
+
+.menu{
+    display: none;
+}
+#close{
+    display: none;
+}
+#ham-check{
+    display: none;
+}
+#ham-check:not(:checked) .close{
+    display: none;
+}
+nav ul{
+    display: flex;
+    list-style-type: none;
+}
+nav ul li{
+    padding: 1em;
+    font-size: var(--nav-size);
+    color: hsl(233, 8%, 62%);
+}
+.gradient-link{
+    padding: .6em 1em;
+    text-decoration: none;
+    background-image: linear-gradient(to right, hsl(136, 65%, 51%),hsl(192, 70%, 51%));
+    border-radius: 1.3em;
+    font-size: var(--nav-size);
+    transition: all 1s ease;
+}
+.gradient-link:hover{
+    background-image: linear-gradient(to right, hsl(192, 70%, 51%),hsl(136, 65%, 51%));
+    opacity: .6;
+    color: #fff;
+}
+
+.first-sec{
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-image: url(./images/bg-intro-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: 40vw -55vh;
+    background-color: hsl(0, 0%, 98%);
+    padding-bottom: 0;
+}
+.first-sec article{
+    flex-basis: 50%;
+}
+.first-sec article img{
+    width: 100%;
+    transform: translate(30%,-10%);
+    z-index: -9999;
+}
+.first-sec div{
+    margin-top: 2em;
+}
+.first-art{
+    align-self: flex-start;
+    padding-top: 120px;
+}
+.first-sec h1{
+    font-size: var(--big-head);
+    font-weight: 300;
+    width: 60%;
+    margin-bottom: .5em;
+}
+.first-art p{
+    font-size: 1.3rem;
+    width: 350px;   /*********************change this in mobile*/
+    line-height: 1.5;
+}
+
+/* *******************************ALL P HAS SAME COLOUR */
+p{
+    color: hsl(233, 8%, 62%);
+}
+
+.second-sec{
+    background-color: hsl(220, 16%, 96%);
+    min-height: 70vh;
+}
+.grid-cont{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+    gap: 1em;
+    margin-top: 4em;
+}
+.small-img img{
+    width: 60px;
+}
+ /* ******************************FONT COLOUR */
+ h1,h2,h3,h4{
+    color: hsl(233, 26%, 24%);
+ }
+h2{
+    font-size: var(--h2-size);
+    font-weight: 300;
+}
+.second-art h2{
+    margin-top: 1em;
+}
+.second-art p{
+    font-size: 1.6rem;
+    width: 45vw; /*********************change this in mobile*/
+    line-height: 1.5;
+    margin-bottom: 2em;
+    margin-top: 1.3em;
+}
+.small-img h3{
+    margin: 1em 0;
+}
+.small-img p{
+    font-size: 1.2rem;
+    line-height: 1.5;
+    width: 90%;     /*********************change this in mobile*/
+}
+h3{
+    font-size: var(--h3-size);
+    font-weight: 400;
+}
+
+.third-sec{
+    background-color: hsl(0, 0%, 98%);
+}
+.third-sec img{
+    width: 100%;
+    aspect-ratio: 1.3;
+}
+.third-sec div{
+    background-color: hsl(0, 0%, 100%);
+}
+.text{
+    padding: 1.5em;
+}
+.author{
+    font-size: 1.2rem;
+    margin: 1em 0;
+}
+.third-sec h4{
+    font-size: 1.3rem;
+    width: 80%;      /********************change this*/
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: .6em;
+}
+.article-p{
+    font-size: 1.3rem;
+}
+
+
+footer{
+    background: hsl(233, 26%, 24%);
+    color: hsl(0, 0%, 100%);
+}
+
+footer section{
+    display: flex;
+    padding: 0;
+    justify-content: space-between;
+    
+    margin-bottom: 1.5em;
+}
+.sm-logo{
+    margin-top: 4em;
+}
+.sm-logo img{
+    margin: 0 .4em;
+}
+.footer-link{
+    margin-bottom: 4em;
+}
+footer ul li:first-child{
+    margin-top: 0;
+}
+footer ul li{
+    font-size: 1.4rem;
+    list-style: none;
+    margin: 1em;
+}
+.attribution { font-size: 1.3rem; text-align: center; margin-top: 2em; }
+.attribution a { color: hsl(300, 98%, 50%); text-decoration: none;}
+.right{
+    font-size: 1.3rem;
+}
+ 
+
+@media screen and (width < 600px) {
+    :root{
+        --big-head : 3rem; --h2-size: 2.7rem;
+    }
+
+
+    html{
+        overflow-x: hidden;
+    }
+    section,footer,nav{
+        padding: 2em;
+    }
+    .first-sec article{
+        flex-basis: 100%;
+    }
+     footer section, nav ul{
+        flex-direction: column;
+    }
+    
+    .first-art p,.second-art p,.third-sec h4,.small-img p, .first-sec h1{
+        width: 100%;
+    }
+    .center-mobile{
+        text-align: center;
+    }
+
+    .menu{
+        display: block;
+    }
+    input{
+        display: none;
+    }
+    .menu
+
+    nav{
+        align-items: center;
+    }
+
+    nav ul{
+        position: absolute;
+        top: 8em;
+        background-color: #fff;
+        width: 90%;
+        text-align: center;
+        transform: scale(0);
+        transition: all .4s ease;
+        overflow: hidden;
+        z-index: 9999;
+    }
+    nav{
+        overflow: hidden;
+    }
+    nav h1{
+        align-self: flex-start;
+    }
+    nav .logo, footer .foot-logo{
+        width: 100px;
+    }
+    .grad-link-nav{
+        display: none;
+    }
+
+    .first-sec{
+        flex-direction: column-reverse;
+        background-image: url(./images/bg-intro-mobile.svg);
+        background-position: center -20%;
+    }
+    .first-sec article img{
+        transform: translate(0, -20%);
+    }
+    .first-art{
+        padding-top: 0;
+    }
+    .first-sec div{
+        margin-bottom: 3em;
+    }
+
+    footer section{
+        text-align: center;
+    }
+    
+    footer ul li{
+        font-size: 1.2rem;
+        margin: .6em;
+    }
+    .lastul{
+        margin-bottom: 2em;
+    }
+    .right{
+        margin-top: 2em;
+    }
+    .footer-link{
+        margin-bottom: .2em;
+    }
+    .sm-logo{
+        margin-top: 1.5em;
+        margin: 1.5em;
+    }
+}
